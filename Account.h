@@ -3,32 +3,17 @@
 #define ACCOUNT_H
 
 
-<<<<<<< HEAD
 class Account {
-private:
-=======
-class Account{
->>>>>>> d94566af8e926e4324440b3cb6bc649498c07deb
-    Money balance;
-    std::vector<Money> deposit;
-    std::vector<Money> withdrawal;
-    bool d, w;
-<<<<<<< HEAD
-
-=======
->>>>>>> d94566af8e926e4324440b3cb6bc649498c07deb
+	Money balance;
+	std::vector<Money> deposit;
+	std::vector<Money> withdrawal;
+	bool d, w;
 public:
-    Account(Money M);
-    void makeDeposit(Money M);
-    void makeWithdrawals(Money M);
-<<<<<<< HEAD
-	friend std::ostream& operator <<(std::ostream& out, const Account& m);
+	Account(Money M);
+	void makeDeposit(Money M);
+	void makeWithdrawals(Money M);
+	friend std::ostream& operator <<(std::ostream& out, const Account& thisAccount);
 };
-
-=======
-    friend std::ostream& operator <<(std::ostream& out, const Account& thisAccount);
-};
->>>>>>> d94566af8e926e4324440b3cb6bc649498c07deb
 
 
 /*
