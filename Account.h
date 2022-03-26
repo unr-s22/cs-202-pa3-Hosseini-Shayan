@@ -3,19 +3,20 @@
 #define ACCOUNT_H
 
 
-class Account: public Money {
-public:
-    static Money balance;
-    static std::vector<Money> deposit;
-    static std::vector<Money> withdrawal;
-    static bool d, w;
+class Account {
+private:
+    Money balance;
+    std::vector<Money> deposit;
+    std::vector<Money> withdrawal;
+    bool d, w;
 
+public:
     Account(Money M);
     void makeDeposit(Money M);
     void makeWithdrawals(Money M);
-
+	friend std::ostream& operator <<(std::ostream& out, const Account& m);
 };
-std::ostream& operator <<(std::ostream& out, const Account& m);
+
 
 
 /*a constructor that takes an instance of the Money class to provide an initial balance

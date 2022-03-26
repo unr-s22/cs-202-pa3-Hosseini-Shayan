@@ -1,4 +1,5 @@
 #include "Account.h"
+#include "Money.h"
 
 Account::Account(Money M){
     balance = M;
@@ -16,7 +17,7 @@ void Account::makeWithdrawals(Money M){
 
 std::ostream& operator <<(std::ostream& out, const Account& m){
 
-    if(Account::d == true){
+    if(m.d == true){
         for(Money m : Account::deposit ){
             Account::balance = Account::balance + m;
         }
