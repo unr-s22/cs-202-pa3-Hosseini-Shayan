@@ -14,24 +14,26 @@ void Account::makeWithdrawals(Money M){
     w= true;
 }
 
-std::ostream& operator <<(std::ostream& out, const Account& m){
+std::ostream& operator <<(std::ostream& out, const Account& thisAccount){
 
-    if(Account::d == true){
+
+   if(Account::d == true){
         for(Money m : Account::deposit ){
             Account::balance = Account::balance + m;
         }
     }
 
-    if(Account::w == true){
+    if(Account::w){
         for(Money m : Account::withdrawal ){
             Account::balance = Account::balance - m;
         }
     }
 
+
     out
     << "Account Details\n"
     << "--------------------------\n"
-    << "Current Balance:" << m.balance
+    << "Current Balance:" << thisAccount.balance
     << "--------------------------\n"
     << "Number of Deposits: " << Account::deposit.size()
     << "--------------------"

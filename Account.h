@@ -13,12 +13,12 @@ public:
     Account(Money M);
     void makeDeposit(Money M);
     void makeWithdrawals(Money M);
+    friend std::ostream& operator <<(std::ostream& out, const Account& thisAccount);
 
 };
-std::ostream& operator <<(std::ostream& out, const Account& m);
 
-
-/*a constructor that takes an instance of the Money class to provide an initial balance
+/*
+ * *a constructor that takes an instance of the Money class to provide an initial balance
  * makeDeposit and makeWithdrawals: these functions each have one argument, an instance of the Money class
  * each deposit and withdrawal must be stored in a corresponding vector of type std::vector<Money>
  * when a deposit or withdrawal is made, an internal boolean flag should be set indicating that the balance needs to be updated
