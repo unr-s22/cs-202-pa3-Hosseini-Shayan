@@ -23,9 +23,11 @@ public:
 	explicit Money(const int dollars, const int cents);
 	explicit Money();
 	virtual ~Money();
-};
 
+};
 std::ostream& operator <<(std::ostream& os, const Money& m);
+
+
 
 // std::ostream& os,
 

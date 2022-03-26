@@ -1,151 +1,154 @@
 #include "Money.h"
 #include <iostream>
 #include <vector>
-
+// I accidentally deleted your Money.cpp and I couldn't pull it from git
+//so I made a new Money.cpp and copy and pasted your code from git. I'd say do the same.
+// after you pulled this, delete Money.cpp and make a new one and paste your code in it so it has your commit
+// sorry about this :(
 Money::Money()
 {
-	m_value.push_back(0);
-	m_value.push_back(0);
+    m_value.push_back(0);
+    m_value.push_back(0);
 }
 
 Money::Money(const int dollars, const int cents)
 {
-	m_value.push_back(dollars+cents/100);
-	m_value.push_back(cents%100);
+    m_value.push_back(dollars+cents/100);
+    m_value.push_back(cents%100);
 }
 
 int Money::getDollars() const
 {
-	return m_value.at(0);
+    return m_value.at(0);
 }
 
 int Money::getCents() const
 {
-	return m_value.at(1);
+    return m_value.at(1);
 }
 
 bool Money::operator <(const Money& m)
 {
-	if (this->getDollars() < m.getDollars())
-	{
-		return true;
-	}
-	else
-	{
-		if ((this->getDollars() == m.getDollars()) && (this->getCents() < m.getCents()))
-		{
-			return true;
-		}
-		else
-		{
-			return false;
-		}
-	}
+    if (this->getDollars() < m.getDollars())
+    {
+        return true;
+    }
+    else
+    {
+        if ((this->getDollars() == m.getDollars()) && (this->getCents() < m.getCents()))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 }
 
 bool Money::operator >(const Money& m)
 {
-	if (this->getDollars() > m.getDollars())
-	{
-		return true;
-	}
-	else
-	{
-		if ((this->getDollars() == m.getDollars()) && (this->getCents() > m.getCents()))
-		{
-			return true;
-		}
-		else
-		{
-			return false;
-		}
-	}
+    if (this->getDollars() > m.getDollars())
+    {
+        return true;
+    }
+    else
+    {
+        if ((this->getDollars() == m.getDollars()) && (this->getCents() > m.getCents()))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 }
 
 bool Money::operator <=(const Money& m)
 {
-	if ( (*this < m) || (*this == m) )
-	{
-		return true;
-	}
-	else
-	{
-		return false;
-	}
+    if ( (*this < m) || (*this == m) )
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
 }
 
 bool Money::operator >=(const Money& m)
 {
-	if ((*this > m) || (*this == m))
-	{
-		return true;
-	}
-	else
-	{
-		return false;
-	}
+    if ((*this > m) || (*this == m))
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
 }
 
 bool Money::operator !=(const Money& m)
 {
-	if ((this->getDollars() == m.getDollars()) && (this->getCents() == m.getCents()) )
-	{
-		return false;
-	}
-	else
-	{
-		return true;
-	}
+    if ((this->getDollars() == m.getDollars()) && (this->getCents() == m.getCents()) )
+    {
+        return false;
+    }
+    else
+    {
+        return true;
+    }
 }
 
 bool Money::operator ==(const Money& m)
 {
-	if ((this->getDollars() == m.getDollars()) && (this->getCents() == m.getCents()) )
-	{
-		return true;
-	}
-	else
-	{
-		return false;
-	}
+    if ((this->getDollars() == m.getDollars()) && (this->getCents() == m.getCents()) )
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
 }
 
 Money Money::operator +(const Money& m)
 {
-	int dollars, cents = 0;
-	dollars = this->getDollars() + m.getDollars();
-	cents = this->getCents() + m.getCents();
-	
-	if (cents >= 100)
-	{
-		dollars++;
-		cents -= 100;
-	}
+    int dollars, cents = 0;
+    dollars = this->getDollars() + m.getDollars();
+    cents = this->getCents() + m.getCents();
 
-	Money n(dollars, cents);
-	return n;
+    if (cents >= 100)
+    {
+        dollars++;
+        cents -= 100;
+    }
+
+    Money n(dollars, cents);
+    return n;
 }
 
 Money Money::operator -(const Money& m)
 {
-	int dollars, cents = 0;
-	dollars = this->getDollars() - m.getDollars();
-	cents = this->getCents() - m.getCents();
+    int dollars, cents = 0;
+    dollars = this->getDollars() - m.getDollars();
+    cents = this->getCents() - m.getCents();
 
-	if (cents < 0)
-	{
-		dollars--;
-		cents += 100;
-	}
+    if (cents < 0)
+    {
+        dollars--;
+        cents += 100;
+    }
 
-	Money n(dollars, cents);
-	return n;
+    Money n(dollars, cents);
+    return n;
 }
 
 std::ostream& operator <<(std::ostream& os, const Money& m)
 {
-	os << "$" << m.getDollars() << "." << m.getCents() << std::endl;
-	return os;
+    os << "$" << m.getDollars() << "." << m.getCents() << std::endl;
+    return os;
 }
 
 Money::~Money () {}
