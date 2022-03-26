@@ -29,7 +29,6 @@ std::ostream& operator <<(std::ostream& out, const Account& thisAccount){
         }
     }
 
-
     out
     << "Account Details\n"
     << "--------------------------\n"
@@ -37,6 +36,7 @@ std::ostream& operator <<(std::ostream& out, const Account& thisAccount){
     << "--------------------------\n"
     << "Number of Deposits: " << thisAccount.deposit.size()
     << "\n--------------------"
+    //<< "(" << thisAccount.deposit.<< ")"
     ;
 
     return out;
