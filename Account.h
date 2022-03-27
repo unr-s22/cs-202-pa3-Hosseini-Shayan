@@ -4,6 +4,7 @@
 
 
 class Account {
+public:
 	Money balance;
 	std::vector<Money> deposit;
 	std::vector<Money> withdrawal;

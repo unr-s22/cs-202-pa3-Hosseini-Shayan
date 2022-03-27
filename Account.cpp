@@ -21,23 +21,36 @@ std::ostream& operator <<(std::ostream& out, Account& thisAccount) {
 		for (Money m : thisAccount.deposit) {
 			thisAccount.balance = thisAccount.balance + m;
 		}
+        thisAccount.d=false;
 	}
 
 	if (thisAccount.w) {
 		for (Money m : thisAccount.withdrawal) {
 			thisAccount.balance = thisAccount.balance - m;
-		}
-	}
+        }
+        thisAccount.w=false;
+    }
 
 	out
 		<< "Account Details\n"
 		<< "--------------------------\n"
 		<< "Current Balance:" << thisAccount.balance
+
 		<< "--------------------------\n"
 		<< "Number of Deposits: " << thisAccount.deposit.size()
-		<< "\n--------------------"
-		//<< "(" << thisAccount.deposit.<< ")"
-		;
+		<< "\n--------------------\n";
+    for(int i=0; i<thisAccount.deposit.size(); i++){
+        out<< "("<<i +1 <<") " << thisAccount.deposit.at(i);
+    }
+
+    out << "--------------------------\n"
+        << "Number of Withdrawals: " << thisAccount.withdrawal.size()
+        << "\n--------------------------\n";
+
+
+    for(int i=0; i<thisAccount.withdrawal.size(); i++){
+        out<< "("<<i +1 <<") " << thisAccount.withdrawal.at(i);
+    }
 
 	return out;
 }
