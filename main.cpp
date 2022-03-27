@@ -1,6 +1,7 @@
 #include <iostream>
 #include "Money.h"
 #include "Account.h"
+
 int main(){
     Money starting(300,23);
     Account account(starting);
@@ -17,11 +18,8 @@ int main(){
     Money with1(300,10);
     Money with2(201,34);
     account.makeWithdrawals(with1);
-
     account.makeWithdrawals(with2);
     std::cout<< account <<std::endl;
-
-
 
     return 0;
 }

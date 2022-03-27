@@ -1,10 +1,7 @@
 #include "Money.h"
 #include <iostream>
 #include <vector>
-// I accidentally deleted your Money.cpp and I couldn't pull it from git
-//so I made a new Money.cpp and copy and pasted your code from git. I'd say do the same.
-// after you pulled this, delete Money.cpp and make a new one and paste your code in it so it has your commit
-// sorry about this :(
+
 Money::Money()
 {
     m_value.push_back(0);

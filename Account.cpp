@@ -16,7 +16,6 @@ void Account::makeWithdrawals(Money M) {
 
 std::ostream& operator <<(std::ostream& out, Account& thisAccount) {
 
-
 	if (thisAccount.d == true) {
 		for (Money m : thisAccount.deposit) {
 			thisAccount.balance = thisAccount.balance + m;
@@ -43,10 +42,10 @@ std::ostream& operator <<(std::ostream& out, Account& thisAccount) {
         out<< "("<<i +1 <<") " << thisAccount.deposit.at(i);
     }
 
-    out << "--------------------------\n"
+    out
+        << "--------------------------\n"
         << "Number of Withdrawals: " << thisAccount.withdrawal.size()
         << "\n--------------------------\n";
-
 
     for(int i=0; i<thisAccount.withdrawal.size(); i++){
         out<< "("<<i +1 <<") " << thisAccount.withdrawal.at(i);
