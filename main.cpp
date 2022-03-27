@@ -3,22 +3,16 @@
 #include "Account.h"
 
 int main(){
-    Money starting(300,23);
-    Account account(starting);
+    Account account(Money(300,23));
     std::cout<< account <<std::endl;
 
-    Money depo1(200,00);
-    Money depo2(300,24);
-    Money depo3(501,22);
-    account.makeDeposit(depo1);
-    account.makeDeposit(depo2);
-    account.makeDeposit(depo3);
+    account.makeDeposit(Money(200,00));
+    account.makeDeposit(Money(300,24));
+    account.makeDeposit(Money(501,22));
     std::cout<< account <<std::endl;
 
-    Money with1(300,10);
-    Money with2(201,34);
-    account.makeWithdrawals(with1);
-    account.makeWithdrawals(with2);
+    account.makeWithdrawals(Money(300,10));
+    account.makeWithdrawals(Money(201,34));
     std::cout<< account <<std::endl;
 
     return 0;
