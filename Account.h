@@ -12,7 +12,7 @@ public:
 	Account(Money M);
 	void makeDeposit(Money M);
 	void makeWithdrawals(Money M);
-	friend std::ostream& operator <<(std::ostream& out, const Account& thisAccount);
+	friend std::ostream& operator <<(std::ostream& out, Account& thisAccount);
 };
 
 

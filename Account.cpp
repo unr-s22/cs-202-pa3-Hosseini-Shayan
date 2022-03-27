@@ -14,7 +14,7 @@ void Account::makeWithdrawals(Money M) {
 	w = true;
 }
 
-std::ostream& operator <<(std::ostream& out, const Account& thisAccount) {
+std::ostream& operator <<(std::ostream& out, Account& thisAccount) {
 
 
 	if (thisAccount.d == true) {
